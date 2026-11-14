@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Предновогодний корпоратив — Lumière</title>
+  <meta name="description" content="Приглашение на предновогодний корпоратив в ресторане Lumière">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0c0a08">
+  <style>
+    :root {
+      --bg: #0c0a08;
+      --card: #1a1612;
+      --gold: #d4af37;
+      --gold-light: #f0d78c;
+      --burgundy: #5c1a2a;
+      --text: #f5f0e6;
+      --muted: #a89f8d;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 90px;
+    }
+    .header {
+      text-align: center;
+      padding: 40px 20px 20px;
+    }
+    .logo {
+      font-size: 42px;
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-weight: 300;
+    }
+    .logo span { font-size: 14px; letter-spacing: 6px; display: block; margin-top: 4px; }
+    .invite-label {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 3px;
+      margin: 20px 0 8px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--gold-light);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 320px;
+      margin: 0 auto 24px;
+    }
+    .hero-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+    .section { padding: 28px 20px; }
+    .section-title {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .menu-item {
+      background: var(--card);
+      border-left: 3px solid var(--gold);
+      padding: 16px;
+      margin-bottom: 12px;
+      border-radius: 4px;
+    }
+    .menu-item h3 { font-size: 17px; color: var(--gold-light); font-weight: 400; }
+    .menu-item p { font-size: 14px; color: var(--muted); margin-top: 4px; }
+    .booking-box {
+      background: var(--card);
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid #2a241e;
+    }
+    label { display: block; color: var(--gold); font-size: 13px; margin-bottom: 8px; letter-spacing: 1px; }
+    input[type="date"], input[type="text"], input[type="tel"] {
+      width: 100%;
+      background: #111;
+      border: 1px solid #3a3228;
+      color: var(--text);
+      padding: 14px;
+      border-radius: 4px;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(180deg, var(--gold-light), var(--gold));
+      color: #1a1208;
+      border: none;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      margin-top: 8px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+    }
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #100e0c;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0 18px;
+      border-top: 1px solid #2a241e;
+    }
+    .nav-item {
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .nav-item.active { color: var(--gold); }
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">L<span>LUMIÈRE RESTAURANT</span></div>
+    <div class="invite-label">Приглашение</div>
+    <h1>Предновогодний<br>корпоратив</h1>
+    <p class="subtitle">Приглашаем вашу компанию провести изысканный вечер в атмосфере вкуса, стиля и вдохновения.</p>
+  </div>
+
+  <img src="images/TRm5N.jpg" alt="Интерьер" class="hero-img">
+
+  <div class="section">
+    <div class="section-title">Детали</div>
+    <div class="info-row">📅 20–30 декабря · гибкие даты</div>
+    <div class="info-row">🕖 18:00 – 23:00</div>
+    <div class="info-row">📍 Москва, ул. Петровка, 15</div>
+    <div class="info-row">✨ Закрытый формат · до 40 гостей</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Меню вечера</div>
+    <div class="menu-item">
+      <h3>Закуски</h3>
+      <p>Тартар из тунца · Устрицы · Паштет из фуа-гра</p>
+    </div>
+    <div class="menu-item">
+      <h3>Основные блюда</h3>
+      <p>Стейк рибай · Сибас на гриле · Ризотто с белыми грибами</p>
+    </div>
+    <div class="menu-item">
+      <h3>Десерты</h3>
+      <p>Шоколадный фондан · Тирамису · Фруктовая тарелка</p>
+    </div>
+    <img src="images/gEszp.jpg" alt="Блюдо" style="width:100%; border-radius:6px; margin-top:12px; height:180px; object-fit:cover;">
+  </div>
+
+  <div class="section" id="booking">
+    <div class="section-title">Забронировать</div>
+    <div class="booking-box">
+      <label>Выберите дату</label>
+      <input type="date" id="date" min="2026-12-15" max="2026-12-30">
+      <label>Количество гостей</label>
+      <input type="text" id="guests" placeholder="Например, 12">
+      <label>Ваше имя</label>
+      <input type="text" id="name" placeholder="Имя">
+      <label>Телефон</label>
+      <input type="tel" id="phone" placeholder="+7 ___ ___-__-__">
+      <button class="btn" onclick="book()">Забронировать</button>
+    </div>
+  </div>
+
+  <div class="section">
+    <a href="https://2gis.ru/moscow/search/Петровка%2015" target="_blank" class="btn btn-outline">Открыть в 2ГИС</a>
+    <p style="text-align:center; color:var(--muted); font-size:13px; margin-top:12px;">Нажмите, чтобы построить маршрут</p>
+  </div>
+
+  <nav class="bottom-nav">
+    <a href="#" class="nav-item active">👑<br>Приглашение</a>
+    <a href="#booking" class="nav-item">📅<br>Бронь</a>
+    <a href="#" class="nav-item">🍽️<br>Меню</a>
+    <a href="https://2gis.ru/moscow/search/Петровка%2015" class="nav-item">📍<br>2ГИС</a>
+  </nav>
+
+  <script>
+    function book() {
+      const date = document.getElementById('date').value;
+      const guests = document.getElementById('guests').value;
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      if (!date || !name || !phone) {
+        alert('Пожалуйста, заполните дату, имя и телефон');
+        return;
+      }
+      const msg = `Здравствуйте! Хочу забронировать предновогодний корпоратив.\nДата: ${date}\nГостей: ${guests || 'не указано'}\nИмя: ${name}\nТелефон: ${phone}`;
+      const tg = `https://t.me/share/url?url=&text=${encodeURIComponent(msg)}`;
+      window.open(tg, '_blank');
+      // Можно заменить на mailto или WhatsApp
+    }
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(()=>{});
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "Предновогодний корпоратив — Lumière",
+  "short_name": "Lumière",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0a08",
+  "theme_color": "#0c0a08",
+  "icons": [
+    {
+      "src": "images/YVzgZ.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    }
+  ]
+}
