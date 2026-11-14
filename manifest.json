@@ -1,21 +1,17 @@
 {
-  "name": "Предновогодний корпоратив — Lumière",
-  "short_name": "Lumière",
+  "name": "MAISON NOIR — Приглашение",
+  "short_name": "Maison Noir",
+  "description": "Приглашение на предновогодний корпоратив в ресторан Maison Noir",
   "start_url": "/restraunt/",
   "scope": "/restraunt/",
   "display": "standalone",
-  "background_color": "#0c0a08",
-  "theme_color": "#0c0a08",
+  "background_color": "#080706",
+  "theme_color": "#080706",
   "icons": [
     {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "icon-512.png",
+      "src": "image_a88f57f4.jpg",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/jpeg"
     }
   ]
 }
