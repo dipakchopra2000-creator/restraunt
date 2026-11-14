@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>MAISON NOIR — Предновогодний корпоратив</title>
+<link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#080706">
   <link rel="preconnect" href="https://googleapis.com">
   <link rel="preconnect" href="https://gstatic.com" crossorigin>
   <link href="https://googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -183,6 +185,9 @@
       const text = `Здравствуйте! Ответ на приглашение MAISON NOIR:\n👤 Гость: ${name}\n✨ Статус: ${status}`;
       window.open(`https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
       closeModal('rsvpModal');
+    }
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
     }
   </script>
 </body>
