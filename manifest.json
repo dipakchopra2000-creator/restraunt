@@ -1,15 +1,21 @@
 {
   "name": "Предновогодний корпоратив — Lumière",
   "short_name": "Lumière",
-  "start_url": "/",
+  "start_url": "/restraunt/",
+  "scope": "/restraunt/",
   "display": "standalone",
   "background_color": "#0c0a08",
   "theme_color": "#0c0a08",
   "icons": [
     {
-      "src": "images/YVzgZ.jpg",
+      "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
