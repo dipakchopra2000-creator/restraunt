@@ -9,371 +9,181 @@
   <link href="https://googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #080706;
-      --card-bg: rgba(24, 20, 18, 0.88);
-      --gold: #d4af37;
-      --gold-soft: #b89552;
-      --gold-light: #f3e5ab;
-      --bordeaux: #3b1015;
-      --bordeaux-hover: #52161d;
-      --text: #f5f2eb;
-      --muted: #9e9689;
+      --bg: #080706; --card-bg: rgba(24, 20, 18, 0.88); --gold: #d4af37;
+      --gold-soft: #b89552; --gold-light: #f3e5ab; --bordeaux: #3b1015;
+      --bordeaux-hover: #52161d; --text: #f5f2eb; --muted: #9e9689;
       --border: rgba(212, 175, 55, 0.25);
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--bg);
-      background-image: 
-        radial-gradient(circle at 82% 18%, rgba(74, 18, 25, 0.55) 0%, transparent 48%),
-        radial-gradient(circle at 18% 82%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
-      color: var(--text);
-      min-height: 100vh;
-      padding-bottom: 85px;
-      overflow-x: hidden;
+      font-family: 'Montserrat', sans-serif; background-color: var(--bg);
+      background-image: radial-gradient(circle at 82% 18%, rgba(74, 18, 25, 0.55) 0%, transparent 48%),
+                        radial-gradient(circle at 18% 82%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+      color: var(--text); min-height: 100vh; padding-bottom: 85px; overflow-x: hidden;
     }
-
-    .container {
-      max-width: 440px;
-      margin: 0 auto;
-      padding: 16px 20px;
-      position: relative;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 8px 0 24px;
-    }
-
+    .container { max-width: 440px; margin: 0 auto; padding: 16px 20px; position: relative; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 8px 0 24px; }
     .icon-circle-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.02);
-      color: var(--gold-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: 0.2s;
+      width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02); color: var(--gold-soft);
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
     }
-    .icon-circle-btn:active { background: rgba(212, 175, 55, 0.15); }
-
     .brand-logo { text-align: center; }
-    .brand-logo .title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      letter-spacing: 3px;
-      color: var(--gold-light);
-      font-weight: 600;
-    }
-    .brand-logo .sub {
-      font-size: 8px;
-      letter-spacing: 4px;
-      color: var(--gold-soft);
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      margin-top: 2px;
-    }
-    .brand-logo .sub::before, .brand-logo .sub::after {
-      content: '';
-      height: 1px;
-      width: 14px;
-      background: var(--gold-soft);
-      opacity: 0.5;
-    }
-
-    .hero {
-      position: relative;
-      padding: 8px 0 32px;
-      min-height: 245px;
-    }
-
+    .brand-logo .title { font-family: 'Cormorant Garamond', serif; font-size: 20px; letter-spacing: 3px; color: var(--gold-light); font-weight: 600; }
+    .brand-logo .sub { font-size: 8px; letter-spacing: 4px; color: var(--gold-soft); text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 2px; }
+    .brand-logo .sub::before, .brand-logo .sub::after { content: ''; height: 1px; width: 14px; background: var(--gold-soft); opacity: 0.5; }
+    .hero { position: relative; padding: 8px 0 32px; min-height: 245px; }
     .hero-decor-img {
-      position: absolute;
-      right: -25px;
-      top: -20px;
-      width: 225px;
-      height: auto;
-      z-index: 1;
-      pointer-events: none;
-      mix-blend-mode: lighten;
-      -webkit-mask-image: radial-gradient(circle at 55% 50%, black 45%, transparent 90%);
+      position: absolute; right: -25px; top: -20px; width: 225px; height: auto; z-index: 1; pointer-events: none;
+      mix-blend-mode: lighten; -webkit-mask-image: radial-gradient(circle at 55% 50%, black 45%, transparent 90%);
       mask-image: radial-gradient(circle at 55% 50%, black 45%, transparent 90%);
     }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 62%;
-    }
-
-    .tag-invite {
-      font-size: 10px;
-      letter-spacing: 2.5px;
-      color: var(--gold-soft);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 35px;
-      line-height: 1.05;
-      font-weight: 600;
-      color: var(--gold-light);
-      margin-bottom: 16px;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
-    }
-
-    .hero p {
-      font-size: 13px;
-      line-height: 1.5;
-      color: #d6d0c4;
-      font-weight: 300;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px 8px;
-      margin-bottom: 28px;
-      position: relative;
-      z-index: 2;
-      backdrop-filter: blur(8px);
-    }
-
-    .info-col {
-      text-align: center;
-      padding: 0 6px;
-      border-right: 1px solid rgba(212, 175, 55, 0.15);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    .hero-content { position: relative; z-index: 2; max-width: 62%; }
+    .tag-invite { font-size: 10px; letter-spacing: 2.5px; color: var(--gold-soft); text-transform: uppercase; margin-bottom: 12px; font-weight: 500; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 35px; line-height: 1.05; font-weight: 600; color: var(--gold-light); margin-bottom: 16px; text-shadow: 0 2px 12px rgba(0,0,0,0.8); }
+    .hero p { font-size: 13px; line-height: 1.5; color: #d6d0c4; font-weight: 300; }
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 18px 8px; margin-bottom: 28px; position: relative; z-index: 2; backdrop-filter: blur(8px); }
+    .info-col { text-align: center; padding: 0 6px; border-right: 1px solid rgba(212, 175, 55, 0.15); display: flex; flex-direction: column; align-items: center; }
     .info-col:last-child { border-right: none; }
-
     .info-icon { color: var(--gold-soft); margin-bottom: 10px; }
-    .info-label {
-      font-size: 9px;
-      letter-spacing: 1.5px;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .info-val {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 3px;
-    }
-    .info-sub {
-      font-size: 9px;
-      color: var(--gold-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .section-divider {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .section-divider span {
-      font-size: 11px;
-      letter-spacing: 2.5px;
-      color: var(--gold-light);
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .section-divider .line {
-      height: 1px;
-      background: linear-gradient(90deg, var(--border), transparent);
-      flex-grow: 1;
-      position: relative;
-    }
-    .section-divider .line::after {
-      content: '◆';
-      position: absolute;
-      right: 0;
-      top: -6px;
-      font-size: 8px;
-      color: var(--gold-soft);
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-
+    .info-label { font-size: 9px; letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
+    .info-val { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+    .info-sub { font-size: 9px; color: var(--gold-soft); text-transform: uppercase; letter-spacing: 0.5px; }
+    .section-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .section-divider span { font-size: 11px; letter-spacing: 2.5px; color: var(--gold-light); text-transform: uppercase; white-space: nowrap; }
+    .section-divider .line { height: 1px; background: linear-gradient(90deg, var(--border), transparent); flex-grow: 1; position: relative; }
+    .section-divider .line::after { content: '◆'; position: absolute; right: 0; top: -6px; font-size: 8px; color: var(--gold-soft); }
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 28px; }
     .feature-item { text-align: center; }
-    .feature-circle {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 70%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 10px;
-      color: var(--gold-light);
-    }
-    .feature-title {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 4px;
-      line-height: 1.25;
-    }
-    .feature-desc {
-      font-size: 10px;
-      color: var(--muted);
-      line-height: 1.3;
-    }
-
-    .btn-rsvp {
-      width: 100%;
-      background: linear-gradient(90deg, #2d0b0f 0%, var(--bordeaux) 50%, #2d0b0f 100%);
-      border: 1px solid var(--gold-soft);
-      color: var(--gold-light);
-      padding: 16px 20px;
-      border-radius: 14px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(59, 16, 21, 0.5);
-      transition: 0.2s;
-    }
-    .btn-rsvp:active { transform: scale(0.98); background: var(--bordeaux-hover); }
-    .btn-rsvp .arrow {
-      position: absolute;
-      right: 18px;
-      font-size: 16px;
-      color: var(--gold);
-    }
-
-    .footer-note {
-      text-align: center;
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .bottom-nav {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: rgba(12, 10, 9, 0.95);
-      backdrop-filter: blur(10px);
-      border-top: 1px solid rgba(212, 175, 55, 0.15);
-      display: flex;
-      justify-content: space-around;
-      padding: 10px 0 14px;
-      z-index: 50;
-    }
-    .nav-btn {
-      background: none;
-      border: none;
-      color: var(--muted);
-      font-size: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      cursor: pointer;
-      font-family: inherit;
-    }
+    .feature-circle { width: 56px; height: 56px; border-radius: 50%; border: 1px solid var(--border); background: radial-gradient(circle, rgba(212,175,55,0.12) 0%, transparent 70%); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; color: var(--gold-light); }
+    .feature-title { font-size: 11px; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.25; }
+    .feature-desc { font-size: 10px; color: var(--muted); line-height: 1.3; }
+    .btn-rsvp { width: 100%; background: linear-gradient(90deg, #2d0b0f 0%, var(--bordeaux) 50%, #2d0b0f 100%); border: 1px solid var(--gold-soft); color: var(--gold-light); padding: 16px 20px; border-radius: 14px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; justify-content: center; position: relative; cursor: pointer; box-shadow: 0 6px 20px rgba(59, 16, 21, 0.5); }
+    .btn-rsvp .arrow { position: absolute; right: 18px; font-size: 16px; color: var(--gold); }
+    .footer-note { text-align: center; font-size: 11px; color: var(--muted); margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(12, 10, 9, 0.95); backdrop-filter: blur(10px); border-top: 1px solid rgba(212, 175, 55, 0.15); display: flex; justify-content: space-around; padding: 10px 0 14px; z-index: 50; }
+    .nav-btn { background: none; border: none; color: var(--muted); font-size: 10px; display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; font-family: inherit; }
     .nav-btn.active { color: var(--gold-light); }
-
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.82);
-      backdrop-filter: blur(5px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      z-index: 100;
-    }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.82); backdrop-filter: blur(5px); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 100; }
     .modal-overlay.open { display: flex; }
-    .modal-card {
-      background: #14110f;
-      border: 1px solid var(--gold-soft);
-      border-radius: 20px;
-      padding: 24px;
-      width: 100%;
-      max-width: 380px;
-      position: relative;
-    }
-    .modal-close {
-      position: absolute;
-      right: 16px; top: 16px;
-      background: none; border: none; color: var(--muted);
-      font-size: 20px; cursor: pointer;
-    }
-    .modal-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      color: var(--gold-light);
-      margin-bottom: 12px;
-    }
-    .input-field {
-      width: 100%;
-      padding: 12px 14px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: #fff;
-      font-size: 14px;
-      margin-bottom: 12px;
-      font-family: inherit;
-    }
-    .input-field:focus { outline: none; border-color: var(--gold); }
+    .modal-card { background: #14110f; border: 1px solid var(--gold-soft); border-radius: 20px; padding: 24px; width: 100%; max-width: 380px; position: relative; }
+    .modal-close { position: absolute; right: 16px; top: 16px; background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; }
+    .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--gold-light); margin-bottom: 12px; }
+    .input-field { width: 100%; padding: 12px 14px; background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 10px; color: #fff; font-size: 14px; margin-bottom: 12px; font-family: inherit; }
   </style>
 </head>
 <body>
-
   <div class="container">
     <header>
-      <button class="icon-circle-btn" onclick="openModal('detailsModal')" aria-label="Детали">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-      </button>
+      <button class="icon-circle-btn" onclick="openModal('detailsModal')">←</button>
       <div class="brand-logo">
         <div class="title">MAISON NOIR</div>
         <div class="sub">RESTAURANT</div>
       </div>
-      <button class="icon-circle-btn" onclick="openModal('detailsModal')" aria-label="Меню">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
+      <button class="icon-circle-btn" onclick="openModal('detailsModal')">☰</button>
     </header>
 
     <section class="hero">
       <img src="image_a88f57f4.jpg" alt="Maison Noir" class="hero-decor-img">
       <div class="hero-content">
         <div class="tag-invite">Приглашение</div>
+        <h1>Предновогодний<br>корпоратив</h1>
+        <p>Встречайте Новый год в атмосфере исключительного вкуса и стиля.</p>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <div class="info-col">
+        <div class="info-icon">📅</div>
+        <div class="info-label">Дата</div>
+        <div class="info-val">18 ДЕКАБРЯ 2026</div>
+        <div class="info-sub">Пятница</div>
+      </div>
+      <div class="info-col">
+        <div class="info-icon">🕒</div>
+        <div class="info-label">Время</div>
+        <div class="info-val">19:00</div>
+        <div class="info-sub">до 23:00</div>
+      </div>
+      <div class="info-col" onclick="openMap()" style="cursor:pointer;">
+        <div class="info-icon">📍</div>
+        <div class="info-label">Место</div>
+        <div class="info-val">MAISON NOIR</div>
+        <div class="info-sub">Ресторан ↗</div>
+      </div>
+    </section>
+
+    <div class="section-divider"><span>Ожидает вас</span><div class="line"></div></div>
+
+    <section class="features-grid">
+      <div class="feature-item">
+        <div class="feature-circle">🍽️</div>
+        <div class="feature-title">Изысканное меню</div>
+        <div class="feature-desc">от шеф-повара<br>и авторские напитки</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-circle">🎵</div>
+        <div class="feature-title">Живая музыка</div>
+        <div class="feature-desc">и праздничная<br>программа</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-circle">🎁</div>
+        <div class="feature-title">Подарки</div>
+        <div class="feature-desc">и специальные<br>сюрпризы</div>
+      </div>
+    </section>
+
+    <button class="btn-rsvp" onclick="openModal('rsvpModal')">ПРИНЯТЬ ПРИГЛАШЕНИЕ <span class="arrow">›</span></button>
+    <div class="footer-note">🤍 Будем рады видеть вас в Maison Noir</div>
+  </div>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn active" onclick="setNav(this); window.scrollTo({top:0, behavior:'smooth'})">📅<br>Событие</button>
+    <button class="nav-btn" onclick="setNav(this); openModal('rsvpModal')">⭐<br>Приглашение</button>
+    <button class="nav-btn" onclick="setNav(this); openModal('detailsModal')">•••<br>Детали</button>
+  </nav>
+
+  <div class="modal-overlay" id="rsvpModal" onclick="closeOnBg(event, 'rsvpModal')">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('rsvpModal')">✕</button>
+      <div class="modal-title">Подтверждение</div>
+      <p style="font-size:12px; color:var(--muted); margin-bottom:16px;">Укажите ваше имя, чтобы мы забронировали место.</p>
+      <input type="text" id="guestName" class="input-field" placeholder="Ваше Имя и Фамилия">
+      <select id="guestStatus" class="input-field" style="background:#1c1815;">
+        <option value="Обязательно буду!">Обязательно буду!</option>
+        <option value="Буду с парой (+1)">Буду с парой (+1)</option>
+        <option value="К сожалению, не смогу">К сожалению, не смогу</option>
+      </select>
+      <button class="btn-rsvp" onclick="sendWhatsApp()" style="margin-top:8px;">ОТПРАВИТЬ ОТВЕТ <span class="arrow">›</span></button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="detailsModal" onclick="closeOnBg(event, 'detailsModal')">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('detailsModal')">✕</button>
+      <div class="modal-title">Детали вечера</div>
+      <p style="font-size:13px; color:#d6d0c4; margin-bottom:10px;"><strong>Дресс-код:</strong> Cocktail / Black Tie (черный, золотой, бордовый).</p>
+      <p style="font-size:13px; color:#d6d0c4; margin-bottom:16px;"><strong>Адрес:</strong> г. Алматы, пр. Достык, 105, Maison Noir.</p>
+      <button class="btn-rsvp" onclick="openMap()">ОТКРЫТЬ В 2GIS <span class="arrow">↗</span></button>
+    </div>
+  </div>
+
+  <script>
+    const WHATSAPP_NUMBER = '77001234567';
+    const MAP_2GIS_URL = 'https://2gis.kz';
+    function openModal(id) { document.getElementById(id).classList.add('open'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+    function closeOnBg(e, id) { if (e.target.id === id) closeModal(id); }
+    function openMap() { window.open(MAP_2GIS_URL, '_blank'); }
+    function setNav(btn) { document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
+    function sendWhatsApp() {
+      const name = document.getElementById('guestName').value.trim();
+      const status = document.getElementById('guestStatus').value;
+      if (!name) { alert('Введите ваше имя.'); return; }
+      const text = `Здравствуйте! Ответ на приглашение MAISON NOIR:\n👤 Гость: ${name}\n✨ Статус: ${status}`;
+      window.open(`https://wa.me{WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, '_blank');
+      closeModal('rsvpModal');
+    }
+  </script>
+</body>
+</html>
